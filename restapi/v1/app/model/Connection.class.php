@@ -12,7 +12,7 @@
 			// $this->BaseDatos = "db_intestino_limpo";
 			// $this->BaseDatos = "informacionspf";
 
-			$this->Servidor  = "Master"
+			$this->Servidor  = "QUALITY"
 			$this->BaseDatos = "griantmx_asesoria";
 			$this->Usuario 	 = "griantmx_asesor";
 			$this->Clave	 = "AGrijalva123";
