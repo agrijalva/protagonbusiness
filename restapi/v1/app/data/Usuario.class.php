@@ -26,16 +26,23 @@ class Usuario
 		}
 		else{
 			$params = array(
-					'user' => array( 'value' => $this->user, 'type' => 'STRING' ),
-					'pass' => array( 'value' => $this->pass, 'type' => 'STRING' )
+					'_email' 	=> array( 'value' => $this->user, 'type' => 'STRING' ),
+					'_password' => array( 'value' => $this->pass, 'type' => 'STRING' ),
+					'_origen' 	=> array( 'value' => '{test:test}', 'type' => 'STRING' ),
+					'_ip' 		=> array( 'value' => '192.168.0.2', 'type' => 'STRING' )
 				);
 
-			$_result = $this->conn->Query( "ADM_LOGIN_SP", $params );
+			$_result = $this->conn->Query( "LOG_SEL_PROTAGONISTA_SP", $params );
 
 			if( !empty( $_result ) ){
-				$_response['success'] 	= true;
-				$_response['msg']     	= 'Registros encontrados: ' . count( $_result );
-				$_response['data'] 		= $_result;
+				if( isset( $_result[0]['success'] ) ){
+					$_response['msg'] = $_result[0]['msg'];
+				}
+				else{
+					$_response['success'] 	= true;
+					$_response['msg']     	= 'Registros encontrados: ' . count( $_result );
+					$_response['data'] 		= $_result[0];
+				}
 			}
 			else{
 				$_response['msg']     	= 'No se encontraron resultados para tu solicitud.';	
