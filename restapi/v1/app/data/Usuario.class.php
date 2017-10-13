@@ -35,7 +35,7 @@ class Usuario
 			$_result = $this->conn->Query( "LOG_SEL_PROTAGONISTA_SP", $params );
 
 			if( !empty( $_result ) ){
-				if( $_result[0]['success'] == 0 ){
+				if( isset( $_result[0]['success'] ) ){
 					$_response['msg'] = $_result[0]['msg'];
 				}
 				else{
