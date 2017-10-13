@@ -20,13 +20,13 @@ var app = angular.module("yapp", ["ui.router", "ngAnimate", "ngSanitize","ui.car
         templateUrl: "pages/admin.html",
         controller: "DashboardCtrl"
     })
-    // .state("agentes", {
-    //     url: "/agentes",
-    //     parent: "admin",
-    //     cache:false,
-    //     templateUrl: "pages/agentes/templates/agentes.html",
-    //     controller: "AgentesCtrl"
-    // })
+    .state("detalle", {
+        url: "/detalle",
+        parent: "admin",
+        cache:false,
+        templateUrl: "pages/detalle/detalle.html",
+        controller: "DetalleCtrl"
+    })
 }]);
 
 var API_Path = "http://localhost/protagonbusiness/restapi/v1/index.php"

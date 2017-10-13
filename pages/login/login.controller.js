@@ -20,8 +20,8 @@ app.controller("LoginCtrl", ["$scope", "$location","loginFactory", function($sco
             loginFactory.login( $scope.user, $scope.pass ) .then(function(result){
                 $scope.datosUser = result.data;
                 if( $scope.datosUser.success ){
-                    localStorage.setItem("Data_User", JSON.stringify($scope.datosUser.data[0]));
-                    $location.path("/admin/agentes");
+                    localStorage.setItem("Data_User", JSON.stringify($scope.datosUser.data));
+                    $location.path("/admin/detalle");
                 }
                 else{
                     swal("Protagon Business",$scope.datosUser.msg,"warning");
