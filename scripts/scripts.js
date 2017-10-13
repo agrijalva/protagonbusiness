@@ -1,5 +1,6 @@
 "use strict";
-var app = angular.module("yapp", ["ui.router", "ngAnimate", "ngSanitize","ui.carousel"]).config(["$stateProvider", "$urlRouterProvider", function(r, t) {
+var app = angular.module("yapp", ["ui.router", "ngAnimate", "ngSanitize","ui.carousel"])
+.config(["$stateProvider", "$urlRouterProvider", function(r, t) {
     t.when("/admin", "/admin/overview"), t.otherwise("/login"), r.state("base", {
         "abstract": !0,
         url: "",

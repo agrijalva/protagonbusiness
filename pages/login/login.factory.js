@@ -11,8 +11,19 @@ app.factory( 'loginFactory', function( $http ){
                     pass: pass
                 },
                 headers: {
-                	// 'Authorization': 'Basic ' + Authorization,
-                    // 'Authorization': Authorization,
+                    'Content-Type': 'application/json'
+                }
+            });
+        },
+        registro: function( user, pass ) {
+            return $http({
+                url: Path_Login + 'registro/',
+                method: "POST",
+                params: {
+                    user: user,
+                    pass: pass
+                },
+                headers: {
                     'Content-Type': 'application/json'
                 }
             });
