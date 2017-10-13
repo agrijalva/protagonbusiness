@@ -12,15 +12,15 @@
 			// $this->BaseDatos = "db_intestino_limpo";
 			// $this->BaseDatos = "informacionspf";
 
-			$this->Servidor  = "Master"
-			$this->BaseDatos = "griantmx_asesoria";
-			$this->Usuario 	 = "griantmx_asesor";
-			$this->Clave	 = "AGrijalva123";
+			// $this->Servidor  = "QUALITY"
+			// $this->BaseDatos = "griantmx_asesoria";
+			// $this->Usuario 	 = "griantmx_asesor";
+			// $this->Clave	 = "AGrijalva123";
 
-			// $this->BaseDatos = "asesoria";
-			// $this->Servidor  = "localhost";
-			// $this->Usuario 	 = "root";
-			// $this->Clave	 = "";
+			$this->BaseDatos = "protagonbusiness";
+			$this->Servidor  = "localhost";
+			$this->Usuario 	 = "root";
+			$this->Clave	 = "";
 
 			// $this->BaseDatos = "nutrici9_asesoria";
 			// $this->Servidor  = "localhost";
