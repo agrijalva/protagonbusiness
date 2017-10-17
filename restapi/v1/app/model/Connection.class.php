@@ -20,7 +20,7 @@
 			$this->BaseDatos = "protagonbusiness";
 			$this->Servidor  = "localhost";
 			$this->Usuario 	 = "root";
-			$this->Clave	 = "";
+			$this->Clave	 = "root_123";
 
 			// $this->BaseDatos = "nutrici9_asesoria";
 			// $this->Servidor  = "localhost";

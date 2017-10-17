@@ -52,33 +52,37 @@ class Usuario
 		return $this->Request( $_response );
 	}
 
-	public function login_ejecutivo(){
+
+	public function registro(){
 		$_response['success'] = false;
-		if( empty( $this->user ) && empty( $this->pass ) ){
-			$_response['msg']     	= 'Favor de proporcionar tus credenciales';
-		}
-		else if( empty( $this->user ) ){
-			$_response['msg']     	= 'Proporciona tu email';
-		}
-		else if( empty( $this->pass ) ){
-			$_response['msg']     	= 'Proporciona tu password';
+		if ( !filter_var( $this->email , FILTER_VALIDATE_EMAIL) ){
+			$_response['msg'] = 'Favor de proporcionar email valido';
 		}
 		else{
 			$params = array(
-					'user' => array( 'value' => $this->user, 'type' => 'STRING' ),
-					'pass' => array( 'value' => $this->pass, 'type' => 'STRING' )
+					'_nombre' => array( 'value' => $this->nombre, 'type' => 'STRING' ),
+					'_email' => array( 'value' => $this->correo, 'type' => 'STRING' ),
+					'_password' => array( 'value' => $this->password, 'type' => 'STRING' ),
+					'idEspecialidad' => array( 'value' => '3', 'type' => 'STRING' ),
+					'_origen' 	=> array( 'value' => '{test:test}', 'type' => 'STRING' ),
+					'_ip' 		=> array( 'value' => '192.168.0.2', 'type' => 'STRING' )
 				);
 
-			$_result = $this->conn->Query( "EJE_LOGIN_SP", $params );
+			$_result = $this->conn->Query( "PRO_INS_REGISTRO_SP", $params );
 
 			if( !empty( $_result ) ){
-				$_response['success'] 	= true;
-				$_response['msg']     	= 'Registros encontrados: ' . count( $_result );
-				$_response['data'] 		= $_result;
+				if( isset( $_result[0]['success'] ) ){
+					$_response['msg'] = $_result[0]['msg'];
+				}
+				else{
+					$_response['success'] 	= true;
+					$_response['msg']     	= 'Registros encontrados: ' . count( $_result );
+					$_response['data'] 		= $_result[0];
+				}
 			}
 			else{
 				$_response['msg']     	= 'No se encontraron resultados para tu solicitud.';	
-			}			
+			}
 		}
 		
 		return $this->Request( $_response );

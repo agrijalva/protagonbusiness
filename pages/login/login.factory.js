@@ -15,12 +15,14 @@ app.factory( 'loginFactory', function( $http ){
                 }
             });
         },
-        registro: function( user, pass ) {
+        registro: function( name, espe, email, pass ) {
             return $http({
                 url: Path_Login + 'registro/',
                 method: "POST",
                 params: {
-                    user: user,
+                    name: name,
+                    espe: espe,
+                    email: email,
                     pass: pass
                 },
                 headers: {

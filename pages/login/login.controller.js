@@ -34,7 +34,34 @@ app.controller("LoginCtrl", ["$scope", "$location","loginFactory", function($sco
     }
 
     $scope.Registro = function(){
-        alert('Alert dentro de la funcion Registro');
+        //alert('Alert dentro de la funcion Registro');
+        if( $scope.nombre == '' ){
+            swal("Protagon Business","Proporciona tu Nombre Completo");
+        }
+        else if( $scope.especialidad == '' ){
+            swal("Protagon Business","Proporciona una especialidad");
+        }
+        else if( $scope.correo == '' ){
+            swal("Protagon Business","Ingresa un email valido");
+        }
+        else if( $scope.password == '' ){
+            swal("Protagon Business","Proporciona tu contraseña");
+        }
+        else{
+            loginFactory.registro( $scope.nombre, $scope.especialidad, $scope.correo, $scope.password ) .then(function(result){
+                $scope.registroUser = result.data;
+                if( $scope.registroUser.success ){
+                    localStorage.setItem("Register_User", JSON.stringify($scope.registroUser.data[0]));
+                    $location.path("/admin/agentes");
+                }
+                else{
+                    swal("Protagon Business",$scope.registroUser.msg,"warning");
+                }
+            }, function(error){
+                console.log("Error", error);
+            });    
+            
+        }
     }
 
     // $scope.submit = function() {
