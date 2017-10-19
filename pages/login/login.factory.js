@@ -20,10 +20,10 @@ app.factory( 'loginFactory', function( $http ){
                 url: Path_Login + 'registro/',
                 method: "POST",
                 params: {
-                    name: name,
+                    nombre: name,
                     espe: espe,
                     email: email,
-                    pass: pass
+                    password: pass // estos son los nombres que se envian al back y deben recogerse con el mismo nombre "password"
                 },
                 headers: {
                     'Content-Type': 'application/json'

@@ -52,7 +52,7 @@ app.controller("LoginCtrl", ["$scope", "$location","loginFactory", function($sco
                 $scope.registroUser = result.data;
                 if( $scope.registroUser.success ){
                     localStorage.setItem("Register_User", JSON.stringify($scope.registroUser.data[0]));
-                    $location.path("/admin/agentes");
+                    $location.path("/admin/detalle");
                 }
                 else{
                     swal("Protagon Business",$scope.registroUser.msg,"warning");
