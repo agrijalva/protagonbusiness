@@ -71,7 +71,7 @@ class Usuario
 				);
 
 			$_result = $this->conn->Query( "PRO_INS_REGISTRO_SP", $params );
-			if ( $_result[0]['msg'] == 1) {
+			if ( $_result[0]['success'] == 1) {
 				$_response['success'] 	= true;
 				$_response['msg'] = $_result[0]['msg'];
 				$_response['data'] 		= $_result[0];

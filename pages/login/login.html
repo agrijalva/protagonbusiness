@@ -1,40 +1,125 @@
-<div class=login-page>
-    <div class=row>        
+<header class="head">
+    <div class="row paddgral">
         <form role=form ng-submit=Login()>
-            <div class=form-content>
-                <div class=form-group> 
-                    <input type="text" ng-model="user" class="form-control input-underline input-lg" placeholder="Correo electrónico">
+            <div class="col-sm-3">
+                <div class="logo">
+                    <img src="images/logo-protagon-wite.png" class="logop">
                 </div>
-                <div class=form-group> 
-                    <input type="password" ng-model="pass" class="form-control input-underline input-lg" placeholder="Contraseña"> 
+                <div class="space1 visible-xs"></div>
+            </div>
+            <div class="col-sm-5">
+                <div class="space1"></div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="space1 visible-xs"></div>
+                        <input type="text" placeholder="Usuario" class="styleform" ng-model="user">
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="space1 visible-xs"></div>
+                        <input type="password" placeholder="Password" class="styleform" ng-model="pass">
+                    </div>
                 </div>
             </div>
-            <button type=submit class="btn btn-white btn-outline btn-lg btn-rounded">
-                Iniciar Sesíon
-            </button> 
-        </form>
-
-
-        <form role=form ng-submit=Registro()>
-            <div class=form-content>
-                <div class=form-group> 
-                    <input type="text" ng-model="nombre" class="form-control input-underline input-lg" placeholder="Nombre completo">
-                </div>
-                <div class=form-group> 
-                    <input type="text" ng-model="especialidad" class="form-control input-underline input-lg" placeholder="Mi especialidad"> 
-                </div>
-                <div class=form-group> 
-                    <input type="text" ng-model="correo" class="form-control input-underline input-lg" placeholder="Correo electrónico">
-                </div>
-                <div class=form-group> 
-                    <input type="password" ng-model="password" class="form-control input-underline input-lg" placeholder="Contraseña"> 
-                </div>
+            <div class="col-sm-2">
+                <div class="space1"></div>
+                <button type=submit class="btn-go">
+                    Iniciar Sesión
+                </button>
             </div>
-            <button type=submit class="btn btn-white btn-outline btn-lg btn-rounded">
-                Registrar Usuario
-            </button> 
+            <div class="col-sm-2 cent">
+                <div class="space2"></div>
+                <a href="#" class="olvidado">¿Has olvidado tu contraseña?</a>
+            </div>
         </form>
-
-
     </div>
-</div>
+</header>
+<section class="altotable" style="padding-top: 120px;">
+    <div class="container-protagon">
+        <div class="row titulo-log">
+            <h1>La manera natural de conectar negocios.</h1>
+            <h2>Comienza hoy. ¡Es gratis!</h2>
+        </div>
+        <div class="space2"></div>
+        <div class="row">
+            <form role=form ng-submit=Registro()>
+                <div class="col-sm-12">
+                    <div class="space1"></div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <div class="icon"><i class="fa fa-user-o" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                            <input type="text" placeholder="Nombre completo" class="styleform2" ng-model="nombre">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="space1"></div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <div class="icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                            <input type="text" placeholder="Mi especialidad" class="styleform2" ng-model="especialidad">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="space1"></div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <div class="icon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                            <input type="text" placeholder="Correo electrónico" class="styleform2" ng-model="correo">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="space1"></div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3">
+                            <div class="icon"><i class="fa fa-lock" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="col-sm-10 col-xs-9">
+                            <input type="password" placeholder="Contraseña" class="styleform2" ng-model="password">
+                        </div>
+                    </div>
+                    <div class="space4"></div>
+                </div>
+                <div class="col-sm-12 polit">
+                    <p>
+                        Al hacer clic en Unirme ahora, aceptas las Condiciones de uso, la Política de privacidad y la Política de cookies de <strong>Protagón Business</strong>.
+                    </p>
+                </div>
+                <div class="col-sm-12">
+                    <button type=submit class="btn-gocreat">
+                        <i class="fa fa-handshake-o" aria-hidden="true"></i><br> CONECTARME&ensp;AHORA
+                    </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<video class="hidden-xs" id="bgvid" playsinline autoplay muted loop>
+    <source src="video/espera_x264.mp4" type="video/mp4" />
+    <source src="video/espera_VP8.webm" type="video/webm" />
+    <source src="video/espera_libtheora.ogv" type="video/ogg" />
+</video>
+
+<section class="barrafooter">
+    <div class="politicas">
+        <p><i class="fa fa-lock" aria-hidden="true"></i></p>
+        <div class="menudow">
+            <ul class="list-inline">
+                <li class="hidden-xs"><i class="fa fa-circle-thin" aria-hidden="true"></i></li>
+                <li><a href="aviso-de-privacidad.pdf" target="_blank">Términos y condiciones</a></li>
+                <li class="hidden-xs"><i class="fa fa-circle-thin" aria-hidden="true"></i></li>
+                <li><a href="aviso-de-privacidad.pdf" target="_blank">Aviso de privacidad</a></li>
+                <li class="hidden-xs"><i class="fa fa-circle-thin" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+    </div>
+</section>
